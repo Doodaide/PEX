@@ -1,0 +1,29 @@
+
+                if(!strcmp(cmd, "CANCEL"))
+                {
+                    order_id_str = strtok(NULL, ";");
+                }
+                else
+                {
+                    order_id_str = strtok(NULL, " ");
+                }
+                // printf("Order id string: %s\n", order_id_str);
+                if(order_id_str == NULL || !check_if_integer(order_id_str))
+                {
+                    if(write(exchange_pipe_fds[trader_index], INVALID_MSG, strlen(INVALID_MSG)) == -1)
+                    {
+                        perror("Write failure");
+                        goto clear;
+                    }
+                    continue;
+                }
+                order_id = atoi(order_id_str);
+                if(order_id < 0  || order_id > 999999)
+                {
+                    if(write(exchange_pipe_fds[trader_index], INVALID_MSG, strlen(INVALID_MSG)) == -1)
+                    {
+                        perror("Write failure");
+                        goto clear;
+                    }
+                    continue;
+                }

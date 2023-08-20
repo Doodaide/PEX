@@ -1,0 +1,41 @@
+    sleep(5);
+        
+        
+        
+        for(i = 0; i < num_events; i++)
+        {
+            if(events[i].events & EPOLLIN)
+            {
+                printf("\t\t>>EPOLLIN\n");
+                //printf("Trader pipe fd: %dEpoll pipe fd: %d\n", trader_pipe_fds[i], events[i].data.fd);
+                int num_bytes = read(events[i].data.fd, epoll_buffer, LINE_SIZE);
+                if(num_bytes == 1)
+                {
+                    perror("read error");
+                    return 1;
+                }
+                printf("\t\tMessage received from pipe: %s\n", epoll_buffer);
+                int trader_index = index_of(trader_pipe_fds, trader_num, events[i].data.fd);
+                char msg[] = "Accepted";
+                // ! PROBLEM LIES HERE
+                printf("\t\t WRitten to child accepted\n");
+                if(write(*(exchange_pipe_fds + trader_index), msg, strlen(msg)) < 0)
+                {
+                    perror("Writing product fail");
+                    return 1;
+                }
+                kill(*(trader_pid + trader_index), SIGUSR1);
+                printf("\t\t>>EPOLLIN\n");
+
+            }
+            else if (events[i].events & EPOLLOUT)
+            {
+                printf("\t\t>>EPOLLOUT\n");
+                
+                printf("\t\t>>EPOLLOUT\n");
+            }
+            else
+            {
+                printf("\t\tBRUH MOMENT\n");
+            }
+        }

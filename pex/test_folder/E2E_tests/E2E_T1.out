@@ -1,0 +1,61 @@
+[PEX] Starting
+[PEX] Trading 4 products: APPLE BANANA PEAR WATERMELON
+[PEX] Created FIFO /tmp/pe_exchange_0
+[PEX] Created FIFO /tmp/pe_trader_0
+[PEX] Starting trader 0 (test_folder/E2E_tests/trader_a_TEST)
+[PEX] Connected to /tmp/pe_exchange_0
+[PEX] Connected to /tmp/pe_trader_0
+[PEX] [T0] Parsing command: <SELL 0 APPLE 15 300>
+[PEX]   --ORDERBOOK--
+[PEX]   Product: APPLE; Buy levels: 0; Sell levels: 1
+[PEX]           SELL 15 @ $300 (1 order)
+[PEX]   Product: BANANA; Buy levels: 0; Sell levels: 0
+[PEX]   Product: PEAR; Buy levels: 0; Sell levels: 0
+[PEX]   Product: WATERMELON; Buy levels: 0; Sell levels: 0
+[PEX]   --POSITIONS--
+[PEX]   Trader 0: APPLE 0 ($0), BANANA 0 ($0), PEAR 0 ($0), WATERMELON 0 ($0)
+[PEX] [T0] Parsing command: <SELL 1 PEAR 3 10>
+[PEX]   --ORDERBOOK--
+[PEX]   Product: APPLE; Buy levels: 0; Sell levels: 1
+[PEX]           SELL 15 @ $300 (1 order)
+[PEX]   Product: BANANA; Buy levels: 0; Sell levels: 0
+[PEX]   Product: PEAR; Buy levels: 0; Sell levels: 1
+[PEX]           SELL 3 @ $10 (1 order)
+[PEX]   Product: WATERMELON; Buy levels: 0; Sell levels: 0
+[PEX]   --POSITIONS--
+[PEX]   Trader 0: APPLE 0 ($0), BANANA 0 ($0), PEAR 0 ($0), WATERMELON 0 ($0)
+[PEX] [T0] Parsing command: <SELL 2 BANANA 1 9>
+[PEX]   --ORDERBOOK--
+[PEX]   Product: APPLE; Buy levels: 0; Sell levels: 1
+[PEX]           SELL 15 @ $300 (1 order)
+[PEX]   Product: BANANA; Buy levels: 0; Sell levels: 1
+[PEX]           SELL 1 @ $9 (1 order)
+[PEX]   Product: PEAR; Buy levels: 0; Sell levels: 1
+[PEX]           SELL 3 @ $10 (1 order)
+[PEX]   Product: WATERMELON; Buy levels: 0; Sell levels: 0
+[PEX]   --POSITIONS--
+[PEX]   Trader 0: APPLE 0 ($0), BANANA 0 ($0), PEAR 0 ($0), WATERMELON 0 ($0)
+[PEX] [T0] Parsing command: <AMEND 2 20 300>
+[PEX]   --ORDERBOOK--
+[PEX]   Product: APPLE; Buy levels: 0; Sell levels: 1
+[PEX]           SELL 15 @ $300 (1 order)
+[PEX]   Product: BANANA; Buy levels: 0; Sell levels: 1
+[PEX]           SELL 20 @ $300 (1 order)
+[PEX]   Product: PEAR; Buy levels: 0; Sell levels: 1
+[PEX]           SELL 3 @ $10 (1 order)
+[PEX]   Product: WATERMELON; Buy levels: 0; Sell levels: 0
+[PEX]   --POSITIONS--
+[PEX]   Trader 0: APPLE 0 ($0), BANANA 0 ($0), PEAR 0 ($0), WATERMELON 0 ($0)
+[PEX] [T0] Parsing command: <CANCEL 2>
+[PEX]   --ORDERBOOK--
+[PEX]   Product: APPLE; Buy levels: 0; Sell levels: 1
+[PEX]           SELL 15 @ $300 (1 order)
+[PEX]   Product: BANANA; Buy levels: 0; Sell levels: 0
+[PEX]   Product: PEAR; Buy levels: 0; Sell levels: 1
+[PEX]           SELL 3 @ $10 (1 order)
+[PEX]   Product: WATERMELON; Buy levels: 0; Sell levels: 0
+[PEX]   --POSITIONS--
+[PEX]   Trader 0: APPLE 0 ($0), BANANA 0 ($0), PEAR 0 ($0), WATERMELON 0 ($0)
+[PEX] Trader 0 disconnected
+[PEX] Trading completed
+[PEX] Exchange fees collected: $0

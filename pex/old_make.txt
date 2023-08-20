@@ -1,0 +1,10 @@
+
+everything:
+	make pe_trader 
+	make pe_exchange
+
+pe_trader: pe_trader.o get_command.o 
+	$(CC) $(CFLAGS) pe_trader.o get_command.o -o pe_trader
+
+pe_exchange: pe_exchange.o get_command.o
+	${CC} ${CFLAGS} pe_exchange.o get_command.o -o pe_exchange
